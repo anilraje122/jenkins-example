@@ -26,6 +26,9 @@ pipeline {
                 withMaven(maven : 'maven') {
                     sh 'mvn deploy'
                 }
+                withMaven(maven : 'maven') {
+                    sh '/bin/cp /var/lib/jenkins/workspace/jenkins-pipeline-17jun2018/target/jenkins-example-1.0-SNAPSHOT.jar /var/lib/tomcat7/webapps/'
+                }
             }
         }
     }
